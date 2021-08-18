@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- GOOGLE FONT CDN - POPPINS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+    <title>Your Name</title>
+
+    <style>
+        body{
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        input, input::placeholder, button{
+            font-family: 'Poppins', sans-serif;
+        }
+
+        section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            padding: 2em 1.5em;
+            background-color: #fff;
+            box-shadow:  0px 1.8px 0.2px 3px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1 id="name-display"></h1>
+        <form onsubmit="event.preventDefault(); display()">
+            <label for="">What is Your Name?</label>
+            <input id="name-input" type="text" placeholder="Enter your name here">
+            <button type="submit">Display!</button>
+        </form>
+    </section>
+
+    <script>
+        const display = () => {
+            const inputValue = document.getElementById("name-input")
+            const currentName = inputValue.value
+            document.getElementById("name-display").innerText = currentName
+            inputValue.value = ""
+        }
+    </script>
+</body>
+</html>
